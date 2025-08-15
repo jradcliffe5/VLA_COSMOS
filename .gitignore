@@ -12,6 +12,9 @@ self_cal
 *.ddfcache
 *.parset
 *.obj
+core.*
+table.*
+FLAG_VERSION_LIST
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

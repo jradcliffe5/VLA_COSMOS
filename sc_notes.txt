@@ -1,0 +1,6 @@
+1 p inf
+2 p inf
+3 ap 20min scan
+4 ap 10min scan
+5 ap 10min scan
+6 p inf

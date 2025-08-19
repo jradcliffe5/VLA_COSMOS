@@ -15,9 +15,9 @@
 #Run the application:
 a=$SLURM_ARRAY_TASK_ID
 declare -a array
-array=("20B-370_wsclean")
+array=("20B-370_ws")
 wsclean_exec="/idia/software/containers/wsclean-v3.6-master-no-cuda-2025-06-18.sif"
-sc="2"
+sc="final"
 field="0"
 i=${array[$a]}
 
@@ -27,4 +27,4 @@ else
     data="CORRECTED_DATA"
 fi
 
-singularity exec $wsclean_exec wsclean -field $field -data-column $data -local-rms -name self_cal/$i"_DI_ws_sc"$sc -size 5000 5000 -apply-primary-beam -scale 0.3arcsec -mgain 0.8 -niter 100000 -auto-mask 5 -auto-threshold 1 -multiscale -weight natural -join-channels -channels-out 8 -no-negative -fit-spectral-pol 2 $i"_sc.ms"
+singularity exec $wsclean_exec wsclean -field $field -data-column $data -name self_cal/$i"_DI_ws_sc"$sc -size 6000 6000 -apply-primary-beam -scale 0.3arcsec -mgain 0.9 -niter 1000000 -auto-mask 5 -auto-threshold 0.5 -weight natural -join-channels -channels-out 8 -fit-spectral-pol 3 $i"_sc.ms"

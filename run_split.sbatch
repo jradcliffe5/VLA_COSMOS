@@ -23,4 +23,4 @@ mpicasa_exec="casa-6.6.1-17-pipeline-2024.1.1.22/bin/mpicasa"
 
 i=${array[$a]}
 
-$casa_exec split_ms.py $i True
+$casa_exec split_ms.py $i False
